@@ -84,7 +84,9 @@ galleryList.addEventListener('click', onImgClick)
 
 function onImgClick(event) {
   event.preventDefault();
-
+  if (event.target.tagName !== 'IMG') {
+    return;
+  }
   const originalImg = event.target.getAttribute('data-source');
   const descriptionImg = event.target.getAttribute('alt');
   
